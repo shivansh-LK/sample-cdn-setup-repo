@@ -1,5 +1,5 @@
 (function () {
-    const componentId = "simple-widget-container"; // ID of the target div
+    const componentId = "simple-widget-container";
   
     function renderSimpleMessage() {
       const targetElement = document.getElementById(componentId);
@@ -10,7 +10,11 @@
       }
     }
   
-    // Call the render function when the script loads
-    renderSimpleMessage();
+    // Delay execution until DOM is ready
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", renderSimpleMessage);
+    } else {
+      renderSimpleMessage();
+    }
   })();
   
