@@ -1,0 +1,1 @@
+# sample-cdn-setup-repo
